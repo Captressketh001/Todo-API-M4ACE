@@ -3,7 +3,7 @@ import TodoSchema from "../models/todo.model.js";
 export const createTodo = async(req, res) => {
     const { title, description } = req.body;
     if (!title && !description){
-        res.status(201).json({status: 400, data: null, msg: 'title or description cannot be empty'})
+        res.status(400).json({status: 400, data: null, msg: 'title or description cannot be empty'})
         return
     }
     // const todo = await TodoSchema.create({
